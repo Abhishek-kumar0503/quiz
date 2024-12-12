@@ -53,9 +53,10 @@ This is a web-based quiz application built with Django. Users can participate in
       python manage.py makemigrations
       python manage.py migrate
       python manage.py createsuperuser
-  ```
+    ```
   
-  ### Step 5
+  ### Step 6
+  
   - 😊😄😃 Run the Server
   ``` sh
     python manage.py runserver
