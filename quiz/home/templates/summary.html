@@ -1,0 +1,18 @@
+<h1>Quiz Summary</h1>
+<p>Total Questions: {{ answers.count }}</p>
+<p>Correct Answers: {{ correct_count }}</p>
+<p>Incorrect Answers: {{ incorrect_count }}</p>
+
+<h2>Details:</h2>
+<ul>
+    {% for answer in answers %}
+    <li>
+        {{ answer.question.question_text }} - Your Answer: {{ answer.selected_option }}
+        {% if answer.is_correct %}
+        (Correct)
+        {% else %}
+        (Incorrect)
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
