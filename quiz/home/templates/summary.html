@@ -1,18 +1,35 @@
-<h1>Quiz Summary</h1>
-<p>Total Questions: {{ answers.count }}</p>
-<p>Correct Answers: {{ correct_count }}</p>
-<p>Incorrect Answers: {{ incorrect_count }}</p>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Question</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz Question</h1>
+        <form method="POST" action="{% url 'submit_answer' session.id %}">
+            {% csrf_token %}
+            <div class="question-container">
+                <!-- Updated the question style to be bold -->
+                <p class="question-text"><strong>{{ question.question_text }}</strong></p>
+                <input type="hidden" name="question_id" value="{{ question.id }}">
+                <!-- Added some space between question and options -->
+                <div class="options">
+                    <label><input type="radio" name="selected_option" value="A"> {{ question.option_a }}</label><br>
+                    <label><input type="radio" name="selected_option" value="B"> {{ question.option_b }}</label><br>
+                    <label><input type="radio" name="selected_option" value="C"> {{ question.option_c }}</label><br>
+                    <label><input type="radio" name="selected_option" value="D"> {{ question.option_d }}</label><br>
+                </div>
+                <div class="submit-btn">
+                    <button type="submit">Submit Answer</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
-<h2>Details:</h2>
-<ul>
-    {% for answer in answers %}
-    <li>
-        {{ answer.question.question_text }} - Your Answer: {{ answer.selected_option }}
-        {% if answer.is_correct %}
-        (Correct)
-        {% else %}
-        (Incorrect)
-        {% endif %}
-    </li>
-    {% endfor %}
-</ul>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
