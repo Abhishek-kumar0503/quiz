@@ -10,52 +10,53 @@ This is a web-based quiz application built with Django. Users can participate in
 - Admin interface to add new quiz questions
 
 ## Set-up
+
 > To get started...
 
-### Step 1
-
-- 🍴 Fork this repo!
-
-### Step 2
-
-- 👯 Clone this repo to your local machine.
-  ```sh
-  git clone https://github.com/Abhishek-kumar0503/quiz.git
-  ```
-
-### Step 3
-
-- 🧑‍💻 Install virtual Environment
+  ### Step 1
   
-  ```sh
-    pip install virtualenv
+  - 🍴 Fork this repo!
+  
+  ### Step 2
+  
+  - 👯 Clone this repo to your local machine.
+    ```sh
+    git clone https://github.com/Abhishek-kumar0503/quiz.git
+    ```
+  
+  ### Step 3
+  
+  - 🧑‍💻 Install virtual Environment
+    
+    ```sh
+      pip install virtualenv
+    ```
+    ```sh
+      cd env/Scripts/
+      activate
+    ```
+    
+  ### Step 4
+  
+  - 🕵️ Install requirement if not installed
+    ```sh
+      pip install -r requirements.txt
+    ```
+  ### Step 5
+  
+  - 🚣‍♂️ Go to the manage.py file directory 
+  ``` sh
+    cd quiz
   ```
-  ```sh
-    cd env/Scripts/
-    activate
+  - Run the migrate and migration and create super Admin
+    ```sh
+      python manage.py makemigrations
+      python manage.py migrate
+      python manage.py createsuperuser
   ```
   
-### Step 4
-
-- 🕵️ Install requirement if not installed
-  ```sh
-    pip install -r requirements.txt
+  ### Step 5
+  - 😊😄😃 Run the Server
+  ``` sh
+    python manage.py runserver
   ```
-### Step 5
-
-- 🚣‍♂️ Go to the manage.py file directory 
-``` sh
-  cd quiz
-```
-- Run the migrate and migration and create super Admin
-  ```sh
-    python manage.py makemigrations
-    python manage.py migrate
-    python manage.py createsuperuser
-```
-
-### Step 5
-- 😊😄😃 Run the Server
-``` sh
-  python manage.py runserver
-```
