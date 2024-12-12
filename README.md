@@ -61,3 +61,11 @@ This is a web-based quiz application built with Django. Users can participate in
   ``` sh
     python manage.py runserver
   ```
+  ### Step 6
+
+  - If you want to add question go to admin panel and add question
+
+    
+  ```sh
+    http://127.0.0.1:8000/admin/
+  ```
